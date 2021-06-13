@@ -45,13 +45,17 @@ class Reader:
 
         return row
 
+    def strip_spaces(self, text):
+
+        return " ".join(filter(None, text.split()))
+
     def get_main_content(self, row):
 
-        return str(row[self.MAIN_CONTENT_COLUMN]).strip()
+        return self.strip_spaces(str(row[self.MAIN_CONTENT_COLUMN]))
 
     def get_address(self, row):
 
-        return str(row[self.ADDRESS_COLUMN]).strip()
+        return self.strip_spaces(str(row[self.ADDRESS_COLUMN]))
 
     def parse_contract_data(self):
 
