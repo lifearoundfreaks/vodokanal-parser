@@ -22,7 +22,7 @@ from const import (
     SHEET_NAME,
     LAST_TABLE_COLUMN,
     TABLE_START_ROW,
-    JOB_NAME_COLUMN,
+    ADDRESS_COLUMN,
     SECTION_TEMPLATE,
     HEADER_TO_MERGE,
     COLUMN_WIDTHS,
@@ -129,7 +129,7 @@ worksheet.conditional_format(table_range, simple_format(border=True))
 header_range = f'A1:{LAST_TABLE_COLUMN}{TABLE_START_ROW+1}'
 worksheet.conditional_format(header_range, simple_format(bold=True))
 
-dept_range = f'{JOB_NAME_COLUMN}{TABLE_START_ROW}:{JOB_NAME_COLUMN}{last_row}'
+dept_range = f'{ADDRESS_COLUMN}{TABLE_START_ROW}:{ADDRESS_COLUMN}{last_row}'
 
 for keyword in [*dept_names, SECTION_TEMPLATE[:2]]:
     worksheet.conditional_format(dept_range, text_format(

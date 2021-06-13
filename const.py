@@ -53,6 +53,7 @@ TABLE_START_ROW = 8
 TABLE_HEADERS = [
     '№ п/п',
     'Інв. №',
+    'Адреса',
     'Найменування робіт',
     'Ф труб, мм',
     'Сума по акту',
@@ -68,9 +69,9 @@ TABLE_HEADERS = [
     'Прим.',
 ]
 
-JOB_NAME_COLUMN = 'C'
-COST_COLUMN = 'J'
-LAST_TABLE_COLUMN = 'O'
+ADDRESS_COLUMN = 'C'
+COST_COLUMN = 'K'
+LAST_TABLE_COLUMN = 'P'
 
 DATA_START_ROW = 10
 
@@ -79,16 +80,17 @@ TABLE_TOTALS = [
     '',
     'Разом:',
     '',
-    '=SUM(E{start}:E{table_size})',
-    '=SUM(F{start}:F{table_size})',
-    '=SUM(G{start}:G{table_size})',
     '',
-    '=SUM(I{start}:I{table_size})',
-    '=SUM(J{start}:J{table_size})',
-    '=SUM(K{start}:K{table_size})',
+    '=SUM(E{start}:F{table_size})',
+    '=SUM(F{start}:G{table_size})',
+    '=SUM(G{start}:H{table_size})',
+    '',
+    '=SUM(I{start}:J{table_size})',
+    '=SUM(J{start}:K{table_size})',
+    '=SUM(K{start}:L{table_size})',
     '',
     '',
-    '=SUM(N{start}:N{table_size})',
+    '=SUM(N{start}:O{table_size})',
     '',
 ]
 
@@ -112,11 +114,11 @@ CONTRACT_NUMBER_SIGNIFIER = 'інв.№ '
 SHEET_NAME = 'Реєстр'
 
 HEADER_TO_MERGE = [
-    'A1:O1',
-    'A2:O2',
-    'A3:O3',
-    'A4:O4',
-    'A5:O5',
+    f'A1:{LAST_TABLE_COLUMN}1',
+    f'A2:{LAST_TABLE_COLUMN}2',
+    f'A3:{LAST_TABLE_COLUMN}3',
+    f'A4:{LAST_TABLE_COLUMN}4',
+    f'A5:{LAST_TABLE_COLUMN}5',
 ]
 
 FOOTER_TO_MERGE = [
@@ -127,7 +129,8 @@ FOOTER_TO_MERGE = [
 COLUMN_WIDTHS = [
     27,
     45,
-    220,
+    135,
+    155,
     48,
     105,
     93,

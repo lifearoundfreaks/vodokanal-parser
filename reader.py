@@ -30,7 +30,7 @@ class Reader:
 
     MAIN_CONTENT_COLUMN = 0
     EMPTY_COL_SIGNIFIER = 'nan'
-    ADDRESS_COLUMN = 2
+    ADDRESS_COLUMN_ID = 2
     INITIAL_ROW = 0
 
     def __init__(self, row_iter, month):
@@ -55,7 +55,7 @@ class Reader:
 
     def get_address(self, row):
 
-        return self.strip_spaces(str(row[self.ADDRESS_COLUMN]))
+        return self.strip_spaces(str(row[self.ADDRESS_COLUMN_ID]))
 
     def parse_contract_data(self):
 
@@ -161,7 +161,8 @@ class ContractSorter:
                     add([
                         '',
                         contract.number,
-                        f'{contract.address}, {contract.job_name}',
+                        contract.address,
+                        contract.job_name,
                         '',
                         '',
                         '',
