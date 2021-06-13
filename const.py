@@ -146,5 +146,5 @@ COLUMN_WIDTHS = [
 ]
 
 HIDDEN_COLUMNS = {
-    4, 5, 6, 10, 12, 13
+    5, 6, 7, 11, 13, 14
 }
